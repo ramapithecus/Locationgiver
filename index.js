@@ -1,5 +1,6 @@
 const Location = [];
-//console.log(Location);
+//const Delegation = {};
+
 function locate(){
  var country = document.getElementById("inpCountry");
  var locCountry = country.value;    
@@ -9,11 +10,17 @@ function locate(){
  var locCity = city.value;     
  var continent = document.getElementById("inpCont");
  var locCont = continent.value;    
- 
-    fullstat = locCountry + locState + locCity + locCont;
+ var fullstat =[];
+//pushes    
+    fullstat.push(locCountry);
+    fullstat.push(locState);
+    fullstat.push(locCity);
+    fullstat.push(locCont);
+    fullstat.join(', ')
+    // fullstat = locCountry + locState + locCity + locCont;
  document.getElementById("rsl").innerHTML = fullstat;
     //console.log(fullstat);
-    Location.push(fullstat);
+    Location.unshift(fullstat);
     console.log(Location);
   }
 var locBtn = document.body.querySelector('button');
