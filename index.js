@@ -1,6 +1,5 @@
-const Location = [];
-//const Delegation = {};
-
+const placeNum= [];
+const Delocation = {};
 function locate(){
  var country = document.getElementById("inpCountry");
  var locCountry = country.value;    
@@ -11,21 +10,30 @@ function locate(){
  var continent = document.getElementById("inpCont");
  var locCont = continent.value;    
  var fullstat =[];
-//pushes    
+//pushes  
+if(locCountry!== ''){
     fullstat.push(locCountry);
-    fullstat.push(locState);
+}
+   if(locState!== ''){
+       fullstat.push(locState);
+   }
+    if(locCity!== ''){
     fullstat.push(locCity);
-    fullstat.push(locCont);
-    fullstat.join(', ')
-    // fullstat = locCountry + locState + locCity + locCont;
- document.getElementById("rsl").innerHTML = fullstat;
-    //console.log(fullstat);
-    Location.unshift(fullstat);
-    console.log(Location);
+    }
+     if(locCont!== ''){
+         fullstat.push(locCont);
+ }
+    //fullstat.join("+");
+
+ document.getElementById("rsl").innerHTML = fullstat.join('+');
+    console.log(fullstat);
+    placeNum.push(fullstat);
+    //placeNum.join(' + ');
+    //console.log(placeNum);
   }
 var locBtn = document.body.querySelector('button');
 locBtn.style.color =" blue";
-console.log(Location)
+//console.log(placeNum);
 locBtn.addEventListener('click',locate);
 
 
